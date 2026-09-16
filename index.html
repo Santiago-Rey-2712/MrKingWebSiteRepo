@@ -1,381 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>Page 11</title>
-<!--
-
-Lava Landing Page
-
-https://templatemo.com/tm-540-lava-landing-page
-
--->
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-
-    <link rel="stylesheet" href="assets/css/templatemo-lava.css">
-
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. King — Portafolio</title>
+<meta name="description" content="Programador, diseñador y game developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+<!-- ============ BARRA DE EDICIÓN ============ -->
+<div class="edit-bar" id="editBar">
+  <button id="editToggle" class="edit-bar__toggle" type="button">
+    <span class="edit-bar__dot"></span> Activar modo edición
+  </button>
+  <div class="edit-bar__actions" id="editActions" hidden>
+    <span class="edit-bar__hint">Haz clic en cualquier texto o imagen para cambiarlo</span>
+    <button id="saveBtn" class="edit-bar__btn" type="button">Guardar cambios</button>
+    <button id="resetBtn" class="edit-bar__btn edit-bar__btn--ghost" type="button">Restablecer todo</button>
+  </div>
+  <span class="edit-bar__saved" id="savedFlag">Guardado</span>
+</div>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <a class="brand" href="#top" data-editable="brand-name">Mr. King</a>
+  <nav class="site-nav">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__main">
+    <p class="hero__kicker" contenteditable="false" data-editable="hero-kicker">Portafolio personal</p>
+    <h1 class="hero__name" contenteditable="false" data-editable="hero-name">Mr. King</h1>
+    <p class="hero__role" contenteditable="false" data-editable="hero-role">Desarrollador y diseñador — juegos, sitios web y experiencias visuales.</p>
+    <div class="hero__cta">
+      <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+      <a href="#contacto" class="btn btn--ghost">Hablemos</a>
     </div>
-    <!-- ***** Preloader End ***** -->
+  </div>
 
-
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            DDFGFE
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="#welcome" class="menu-item">Principal</a></li>
-                            <li class="scroll-to-section"><a href="#about" class="menu-item">Acerca de</a></li>
-                            <!--<li class="scroll-to-section"><a href="#testimonials" class="menu-item">Programas</a></li> -->
-                            <li class="submenu">
-                                <a href="javascript:;">Programas</a>
-                                <ul>
-                                    <li><a href="" class="menu-item">Pre-Reader</a></li>
-                                    <li><a href="" class="menu-item">First Steps</a></li>
-                                    <li><a href="" class="menu-item">Exploring Technology</a></li>
-                                    <li><a href="" class="menu-item">CS for all</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section"><a href="#contact-us" class="menu-item">Contactanos</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-
-
-    <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome">
-
-        <!-- ***** Header Text Start ***** -->
-        <div class="header-text">
-            <div class="container">
-                <div class="row">
-                    <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
-                        data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1>Yo soy  <em>SANTIAGO REY CERVANTES</em></h1>
-                        <p>Lava <a href="#">HTML landing page</a> template is provided by <a href="#">TemplateMo</a>.
-                           You can modify and use it for your commercial websites for free of charge. This template is last updated on 29 Oct 2019.</p> 
-                        <a href="#about" class="main-button-slider">Matricularme</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ***** Header Text End ***** -->
+  <div class="hero__stack" aria-hidden="false">
+    <div class="stack-card stack-card--a">
+      <span class="stack-card__label">Programación</span>
+      <p class="stack-card__list">Python · HTML · CSS · JavaScript</p>
     </div>
-    <!-- ***** Welcome Area End ***** -->
+    <div class="stack-card stack-card--b">
+      <span class="stack-card__label">Diseño</span>
+      <p class="stack-card__list">Blender · Photopea · Adobe Illustrator</p>
+    </div>
+    <div class="stack-card stack-card--c">
+      <span class="stack-card__label">Game Dev</span>
+      <p class="stack-card__list">Unity</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>01</h2>
-                            <img src="assets/images/features-icon-1.png" alt="">
-                            <h4>Algunos de mis proyectos</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#testimonials" class="main-button">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>02</h2>
-                            <img src="assets/images/features-icon-2.png" alt="">
-                            <h4>CLASES EN VIVO</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#testimonials" class="main-button">
-                                Discover More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>03</h2>
-                            <img src="assets/images/features-icon-3.png" alt="">
-                            <h4>TODAS LAS CLASES GAMIFICADAS</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#testimonials" class="main-button">
-                                More Detail
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Big Item End ***** -->
+<!-- ============ SOBRE MÍ ============ -->
+<section class="about" id="sobre-mi">
+  <div class="about__media media-slot" data-media-id="about-photo">
+    <img data-media-img src="" alt="Foto de Mr. King" hidden>
+    <video data-media-video src="" hidden controls playsinline></video>
+    <div class="media-slot__empty" data-media-empty>
+      <span>Sube tu foto o un video de presentación</span>
+    </div>
+    <button type="button" class="media-slot__upload-btn" data-upload-trigger hidden>Subir imagen o video</button>
+    <input type="file" accept="image/*,video/*" hidden data-upload-input>
+  </div>
 
-    <div class="left-image-decor"></div>
+  <div class="about__text">
+    <h2 contenteditable="false" data-editable="about-title">Sobre mí</h2>
+    <p contenteditable="false" data-editable="about-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Escribe aquí quién eres, hace cuánto programas y diseñas, y qué te gusta construir. Este texto es un marcador de posición — actívalo en modo edición y reemplázalo por el tuyo.</p>
+    <p contenteditable="false" data-editable="about-p2">Nulla facilisi. Praesent ac sem eget est egestas volutpat. Cras dapibus, aquí puedes contar tu enfoque de trabajo, tus herramientas favoritas o algún logro que quieras destacar frente a quien visite tu portafolio.</p>
 
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="promotion">
-        <div class="container">
-            <div class="row">
-                <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
-                </div>
-                <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
-                    <ul>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            <img src="assets/images/about-icon-01.png" alt="">
-                            <div class="text">
-                                <h4>EQUIPO MULTIDISCIPLINARIO</h4>
-                                <p>Please do not redistribute this template ZIP file for a download purpose. You may <a
-                                rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact</a> us for
-                            additional licensing of our template or to get a PSD file.</p>
-                            </div>
-                        </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                            <img src="assets/images/about-icon-02.png" alt="">
-                            <div class="text">
-                                <h4>CLASES EN VIVO</h4>
-                                <p>You can <a rel="nofollow"
-                                        href="https://templatemo.com/tm-540-lava-landing-page">download Lava
-                                        Template</a> from our website. Duis viverra, ipsum et scelerisque placerat, orci
-                                    magna consequat ligula.</p>
-                            </div>
-                        </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
-                            <img src="assets/images/about-icon-03.png" alt="">
-                            <div class="text">
-                                <h4>TODAS LAS CLASES GAMIFICADAS</h4>
-                                <p>Phasellus in imperdiet felis, eget vestibulum nulla. Aliquam nec dui nec augue
-                                    maximus porta. Curabitur tristique lacus.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Big Item End ***** -->
+    <ul class="skill-tags">
+      <li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+      <li>Blender</li><li>Photopea</li><li>Adobe Illustrator</li>
+      <li>Unity</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="right-image-decor"></div>
+<!-- ============ PROYECTOS ============ -->
+<section class="projects" id="proyectos">
+  <div class="section-head">
+    <h2 contenteditable="false" data-editable="projects-title">Proyectos</h2>
+    <p contenteditable="false" data-editable="projects-sub">Lorem ipsum: una muestra de lo que he construido — juegos, sitios y diseño.</p>
+  </div>
 
-    <!-- ***** Testimonials Starts ***** -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="center-heading">
-                        <h2>Lo que piensan algunos clientes <em>sobre nosotros</em></h2>
-                        <p>Suspendisse vitae laoreet mauris. Fusce a nisi dapibus, euismod purus non, convallis odio.
-                            Donec vitae magna ornare, pellentesque ex vitae, aliquet urna.</p>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Author One"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>Jonathan Smart</h4>
-                                <p>“Nullam hendrerit, elit a semper pharetra, ipsum nibh tristique tortor, in tempus
-                                    urna elit in mauris.”</p>
-                                <span>Besta CTO</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Second Author"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>Martino Tino</h4>
-                                <p>“Morbi non mi luctus felis molestie scelerisque. In ac libero viverra, placerat est
-                                    interdum, rhoncus leo.”</p>
-                                <span>Web Analyst</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Author Third"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>George Tasa</h4>
-                                <p>“Fusce rutrum in dolor sit amet lobortis. Ut at vehicula justo. Donec quam dolor,
-                                    congue a fringilla sed, maximus et urna.”</p>
-                                <span>System Admin</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Fourth Author"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>Sir James</h4>
-                                <p>"Fusce rutrum in dolor sit amet lobortis. Ut at vehicula justo. Donec quam dolor,
-                                    congue a fringilla sed, maximus et urna."</p>
-                                <span>New Villager</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Testimonials Ends ***** -->
+  <div class="project-grid" id="projectGrid"><!-- las tarjetas se generan con JS --></div>
 
+  <button type="button" class="add-project-btn" id="addProjectBtn" hidden>+ Añadir proyecto</button>
+</section>
 
-    <!-- ***** Footer Start ***** -->
-    <footer id="contact-us">
-        <div class="container">
-            <div class="footer-content">
-                <div class="row">
-                    <!-- ***** Contact Form Start ***** -->
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="contact-form">
-                            <form id="contact" action="" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="name" type="text" id="name" placeholder="Full Name" required=""
-                                                style="background-color: rgba(250,250,250,0.3);">
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="email" type="text" id="email" placeholder="E-Mail Address"
-                                                required="" style="background-color: rgba(250,250,250,0.3);">
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <textarea name="message" rows="6" id="message" placeholder="Your Message"
-                                                required="" style="background-color: rgba(250,250,250,0.3);"></textarea>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <button type="submit" id="form-submit" class="main-button">Send Message
-                                                Now</button>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- ***** Contact Form End ***** -->
-                    <div class="right-content col-lg-6 col-md-12 col-sm-12">
-                        <h2>Tiene alguna duda  <em>adicional?</em></h2>
-                        <p>Phasellus dapibus urna vel lacus accumsan, iaculis eleifend leo auctor. Duis at finibus odio.
-                            Vivamus ut pharetra arcu, in porta metus. Suspendisse blandit pulvinar ligula ut elementum.
-                            <br><br>If you need this contact form to send email to your inbox, you may follow our <a
-                                rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact</a> page
-                            for more detail.</p>
-                        <ul class="social">
-                            <li><a href="https://fb.com/templatemo"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sub-footer">
-                        <p>Copyright &copy; 2020 HiCode Education 2021
+<!-- ============ GALERÍA ============ -->
+<section class="gallery" id="galeria">
+  <div class="section-head">
+    <h2 contenteditable="false" data-editable="gallery-title">Galería</h2>
+    <p contenteditable="false" data-editable="gallery-sub">Un espacio libre para subir imágenes y videos: capturas, renders, clips de gameplay, lo que quieras mostrar.</p>
+  </div>
 
-                        | Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <div class="gallery-grid" id="galleryGrid"><!-- items generados con JS --></div>
+  <button type="button" class="add-project-btn" id="addGalleryBtn" hidden>+ Añadir imagen o video</button>
+</section>
 
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+<!-- ============ CONTACTO ============ -->
+<section class="contact" id="contacto">
+  <div class="contact__info">
+    <h2 contenteditable="false" data-editable="contact-title">Contacto</h2>
+    <p contenteditable="false" data-editable="contact-sub">Lorem ipsum — ¿tienes un proyecto en mente? Escríbeme por cualquiera de estos canales.</p>
 
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <dl class="contact-list">
+      <div class="contact-list__row">
+        <dt>Teléfono</dt>
+        <dd contenteditable="false" data-editable="contact-phone">+00 000 000 0000</dd>
+      </div>
+      <div class="contact-list__row">
+        <dt>Correo</dt>
+        <dd contenteditable="false" data-editable="contact-email">tunombre@correo.com</dd>
+      </div>
+    </dl>
+  </div>
 
-    <!-- Plugins -->
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script>
+  <div class="contact__whatsapp">
+    <a href="#" id="whatsappLink" class="whatsapp-btn" target="_blank" rel="noopener">
+      <span class="whatsapp-btn__icon">●</span>
+      <span class="whatsapp-btn__text" id="whatsappLabel">Escríbeme por WhatsApp</span>
+    </a>
+    <button type="button" class="whatsapp-edit-btn" id="editWhatsapp" hidden>Pegar enlace de WhatsApp</button>
+    <p class="whatsapp-note">Pega aquí tu enlace de wa.me cuando lo tengas.</p>
+  </div>
+</section>
 
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> <span data-editable="footer-name" contenteditable="false">Mr. King</span>. Todos los derechos reservados.</p>
+</footer>
 
+<script src="assets/js/script.js"></script>
 </body>
 </html>

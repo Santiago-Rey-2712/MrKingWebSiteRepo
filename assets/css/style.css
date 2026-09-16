@@ -1,0 +1,466 @@
+/* =====================================================
+   MR. KING — PORTFOLIO
+   Tokens
+===================================================== */
+:root {
+  --navy: #0E1B2C;
+  --blue-800: #2C5EAD;
+  --blue-600: #1591DC;
+  --blue-400: #4BB8FA;
+  --blue-100: #C4E2F5;
+  --paper: #F7FAFD;
+  --ink: #10233F;
+  --ink-soft: #4C6079;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-lg: 28px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 20px 45px -25px rgba(14, 27, 44, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--navy);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+a { color: inherit; }
+
+img, video { max-width: 100%; display: block; }
+
+section { padding: 96px 8vw; }
+
+@media (max-width: 720px) {
+  section { padding: 64px 6vw; }
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.section-head h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 12px; }
+.section-head p { color: var(--ink-soft); font-size: 1.05rem; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn--primary { background: var(--blue-600); color: #fff; }
+.btn--primary:hover { background: var(--blue-800); transform: translateY(-2px); }
+.btn--ghost { border: 1.5px solid var(--blue-800); color: var(--blue-800); }
+.btn--ghost:hover { background: var(--blue-100); }
+
+/* =====================================================
+   EDIT BAR
+===================================================== */
+.edit-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.edit-bar__toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.edit-bar__toggle:hover { border-color: var(--blue-400); }
+.edit-bar.is-editing .edit-bar__toggle { background: var(--blue-600); border-color: var(--blue-600); }
+.edit-bar__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #6b7d95;
+}
+.edit-bar.is-editing .edit-bar__dot { background: #38e07b; }
+
+.edit-bar__actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.edit-bar__hint { color: var(--blue-100); font-size: 0.85rem; }
+.edit-bar__btn {
+  background: var(--blue-600);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+.edit-bar__btn:hover { background: var(--blue-400); }
+.edit-bar__btn--ghost { background: transparent; border: 1.5px solid rgba(255,255,255,0.35); }
+.edit-bar__btn--ghost:hover { border-color: #ff8a8a; color: #ff8a8a; }
+.edit-bar__saved {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: #38e07b;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.edit-bar__saved.show { opacity: 1; }
+
+/* editable affordances */
+[data-editable] { outline-offset: 6px; border-radius: 6px; }
+.is-editing [data-editable] {
+  outline: 1.5px dashed var(--blue-400);
+  cursor: text;
+}
+.is-editing [data-editable]:hover { background: rgba(75, 184, 250, 0.08); }
+.is-editing [data-editable]:focus { outline: 1.5px solid var(--blue-600); background: #fff; }
+
+/* =====================================================
+   HEADER
+===================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 8vw;
+  background: var(--paper);
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--navy);
+}
+.site-nav { display: flex; gap: 28px; }
+.site-nav a { text-decoration: none; font-weight: 500; color: var(--ink-soft); font-size: 0.95rem; }
+.site-nav a:hover { color: var(--blue-600); }
+@media (max-width: 640px) { .site-nav { display: none; } }
+
+/* =====================================================
+   HERO — asymmetric: name left, stacked skill cards right
+===================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 88px;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+}
+
+.hero__kicker {
+  color: var(--blue-600);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.hero__name {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.02;
+}
+.hero__role {
+  max-width: 480px;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 20px 0 32px;
+}
+.hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stack-card {
+  padding: 22px 26px;
+  border-radius: var(--radius-md);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+.stack-card--a { background: var(--blue-800); margin-right: 0; }
+.stack-card--b { background: var(--blue-600); margin-left: 28px; }
+.stack-card--c { background: var(--blue-400); margin-right: 28px; color: var(--navy); }
+@media (max-width: 560px) {
+  .stack-card--a, .stack-card--b, .stack-card--c { margin: 0; }
+}
+.stack-card__label { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; }
+.stack-card__list { margin: 0; font-size: 0.92rem; opacity: 0.92; }
+
+/* =====================================================
+   ABOUT
+===================================================== */
+.about {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  margin: 0 6vw;
+  width: auto;
+}
+@media (max-width: 860px) {
+  .about { grid-template-columns: 1fr; }
+}
+.about__text h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 18px; }
+.about__text p { color: var(--ink-soft); margin: 0 0 16px; }
+
+.skill-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.skill-tags li {
+  background: var(--blue-100);
+  color: var(--blue-800);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+/* =====================================================
+   MEDIA SLOT — reusable upload target (about photo, projects, gallery)
+===================================================== */
+.media-slot {
+  position: relative;
+  background: var(--blue-100);
+  border-radius: var(--radius-md);
+  min-height: 260px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-slot img, .media-slot video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.media-slot__empty {
+  color: var(--blue-800);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  opacity: 0.75;
+}
+.media-slot__upload-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  z-index: 5;
+}
+.media-slot__upload-btn:hover { background: var(--blue-600); }
+.media-slot__remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(14,27,44,0.75);
+  color: #fff;
+  border: none;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.85rem;
+  z-index: 5;
+  display: none;
+}
+.is-editing .media-slot__remove-btn { display: block; }
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+.project-card {
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3;
+}
+.project-card:nth-child(3n+1) { grid-column: span 4; }
+.project-card:nth-child(3n+2) { grid-column: span 2; }
+.project-card:nth-child(3n)   { grid-column: span 6; }
+@media (max-width: 900px) {
+  .project-card, .project-card:nth-child(3n+1), .project-card:nth-child(3n+2), .project-card:nth-child(3n) {
+    grid-column: span 6;
+  }
+}
+.project-card .media-slot { border-radius: 0; min-height: 200px; }
+.project-card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.project-card__tag {
+  align-self: flex-start;
+  background: var(--blue-100);
+  color: var(--blue-800);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.project-card__title { font-family: var(--font-display); font-size: 1.25rem; margin: 4px 0 0; }
+.project-card__desc { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+.project-card__remove {
+  align-self: flex-start;
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  color: #c94b4b;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+}
+.is-editing .project-card__remove { display: inline-block; }
+
+.add-project-btn {
+  margin-top: 28px;
+  border: 1.5px dashed var(--blue-600);
+  color: var(--blue-800);
+  background: transparent;
+  padding: 14px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.add-project-btn:hover { background: var(--blue-100); }
+
+/* =====================================================
+   GALLERY
+===================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+.gallery-item.media-slot { min-height: 200px; border-radius: var(--radius-sm); }
+
+/* =====================================================
+   CONTACT
+===================================================== */
+.contact {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  margin: 0 6vw 96px;
+}
+@media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+.contact h2 { color: #fff; font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 12px; }
+.contact__info p { color: var(--blue-100); }
+
+.contact-list { margin: 28px 0 0; }
+.contact-list__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.contact-list__row dt { color: var(--blue-100); font-size: 0.85rem; font-weight: 600; }
+.contact-list__row dd { margin: 0; font-weight: 500; }
+
+.contact__whatsapp {
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  text-align: center;
+}
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue-600);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.whatsapp-btn:hover { background: var(--blue-400); color: var(--navy); }
+.whatsapp-btn__icon { color: #38e07b; font-size: 0.7rem; }
+.whatsapp-edit-btn {
+  display: block;
+  margin: 14px auto 0;
+  background: transparent;
+  border: 1.5px dashed var(--blue-400);
+  color: var(--blue-100);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+}
+.whatsapp-note { color: var(--blue-100); font-size: 0.78rem; margin-top: 14px; opacity: 0.75; }
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  text-align: center;
+  padding: 32px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
